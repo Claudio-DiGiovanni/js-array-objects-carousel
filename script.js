@@ -82,7 +82,7 @@ btnBottom.addEventListener("click", skipImg)
 
 btnTop.addEventListener("click", skipImgReverse)
 
-setInterval(skipImg, 3000);
+let autoPlay = setInterval(skipImg, 3000);
 
 function skipImg () {
     listImg[visibleIndex].classList.remove("visible");
@@ -112,6 +112,11 @@ function skipImgReverse () {
     eleInfo[visibleIndex].classList.remove("hidden");
 }
 
-btnStop.addEventListener("click", function {
-    
+btnReverse.addEventListener("click", function() {
+    clearInterval(autoPlay)
+    autoPlay = setInterval(skipImgReverse, 3000)
+})
+
+btnStop.addEventListener("click", function () {
+    clearInterval(autoPlay)
 })
