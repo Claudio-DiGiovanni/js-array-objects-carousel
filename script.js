@@ -30,7 +30,8 @@ const eleSlider = document.querySelector(".slider");
 const btnTop = document.querySelector(".btn-top");
 const btnBottom = document.querySelector(".btn-bottom");
 const eleLibrary = document.querySelector(".library")
-
+const btnStop = document.querySelector("#stop");
+const btnReverse = document.querySelector("#reverse");
 
 
 for (let i = 0; i < images.length; i++) {
@@ -77,7 +78,13 @@ const listImgThumb = document.querySelectorAll(".image");
 let visibleIndex = 0;
 const eleInfo = document.querySelectorAll(".info") 
 
-btnBottom.addEventListener("click", function(){
+btnBottom.addEventListener("click", skipImg)
+
+btnTop.addEventListener("click", skipImgReverse)
+
+setInterval(skipImg, 3000);
+
+function skipImg () {
     listImg[visibleIndex].classList.remove("visible");
     listImgThumb[visibleIndex].classList.add("overlay");
     eleInfo[visibleIndex].classList.add("hidden");
@@ -89,10 +96,9 @@ btnBottom.addEventListener("click", function(){
     listImg[visibleIndex].classList.add("visible");
     listImgThumb[visibleIndex].classList.remove("overlay")
     eleInfo[visibleIndex].classList.remove("hidden");
-})
+}
 
-btnTop.addEventListener("click", function(){
-
+function skipImgReverse () {
     listImg[visibleIndex].classList.remove("visible");
     listImgThumb[visibleIndex].classList.add("overlay");
     eleInfo[visibleIndex].classList.add("hidden");
@@ -104,4 +110,8 @@ btnTop.addEventListener("click", function(){
     listImg[visibleIndex].classList.add("visible");
     listImgThumb[visibleIndex].classList.remove("overlay")
     eleInfo[visibleIndex].classList.remove("hidden");
+}
+
+btnStop.addEventListener("click", function {
+    
 })
