@@ -94,7 +94,8 @@ btnBottom.addEventListener("click", function(){
 btnTop.addEventListener("click", function(){
 
     listImg[visibleIndex].classList.remove("visible");
-    listImgThumb[visibleIndex].classList.add("overlay")
+    listImgThumb[visibleIndex].classList.add("overlay");
+    eleInfo[visibleIndex].classList.add("hidden");
     if (visibleIndex <= 0) {
         visibleIndex = listImg.length - 1
     } else {
@@ -102,4 +103,5 @@ btnTop.addEventListener("click", function(){
     }
     listImg[visibleIndex].classList.add("visible");
     listImgThumb[visibleIndex].classList.remove("overlay")
+    eleInfo[visibleIndex].classList.remove("hidden");
 })
